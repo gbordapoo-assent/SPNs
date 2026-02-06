@@ -18,7 +18,7 @@ IMPORTANT:
 ===========================================================
 */
 
-USE AssentDataManitouAmericas;
+USE AssentDataAcist;
 GO
 
 /* 
@@ -142,6 +142,7 @@ IMPORTANT:
 */
 LEFT JOIN tblPart p
     ON p.DateCreated < DATEADD(WEEK, 1, wc.WeekStartDate)
+   AND p.part_status = 1
    AND p.DateDeleted IS NULL
 
 /*
